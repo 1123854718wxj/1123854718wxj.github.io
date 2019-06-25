@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+    <title>登录</title>
+</head>
+
+<body>
+    <%- include("header",{title:'login'}) %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>立即登录</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input value='<%- username%>' type="text" class="form-control" id="username"
+                            placeholder="请输入用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                    <button id="loginBtn" type="button" class="btn btn-success">登录</button>
+                    <button type="button" class="btn btn-info" onclick="location.href='./register'">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include footer %>
+    <script>
+        $('#loginBtn').click(() => {
+            $.ajax({
+                url: '/users/login',
+                type: 'POST',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                },
+                success(res) {
+                    console.log(res);
+                    if (!!res.type) {
+                        alert(res.msg);
+                        location.href = '/';
+                        sessionStorage.token = res.token;
+                    } else {
+                        alert(res.msg);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

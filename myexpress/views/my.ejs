@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include common  %>
+    <title>当前电影评论</title>
+</head>
+<body>
+    <%- include("header",{title:"comment"}) %>
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <h2 class="text-danger text-center"><%- username %>评论的电影</h2>
+            <div class="well">
+            <%    comments.map((comment,index)=>{  %>
+                    <div class="caption" data-mid="<%- comment.mid %>" style="border-bottom:1px solid #6ff">
+                        <h4 class="text-danger pull-right"> <%- comment.time %></h4>
+                        <h4 class="text-success"> <p onclick="change('<%- comment.mid %>')"> <%-comment.mTitle %> </p> </h4>
+                        <p class="h5 text-info"> 标题 : <%- comment.title %> </p>
+                        <p class="h5 text-primary"> 内容 : <%- comment.content %> </p>
+                        <p class="h5 text-danger"> 评论人 : <%- comment.username %> </p>
+                    </div>
+            <%    })     %>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+                <h2 class="text-success text-center"> 当前电影介绍</h2>
+                <div class="thumbnail" id="mv">
+                        <img src="" alt="" style="height:240px;width:200px">
+                        <div class="caption">
+                            <h4 class="text-danger pull-right"></h4>
+                            <h4 class="text-success"> </h4>
+                            <p class="h5 text-info"></p>
+                            <p class="h5 text-primary"></p>
+                            <p class="h5 text-danger"></p>
+                        </div>
+                    </div>
+             </div>
+    </div>
+    <%- include footer %>
+
+    <script>
+        var mid=null;
+        mid=$('.well').find('.caption').eq(0).attr('data-mid');
+        function getMovie(mid){
+            $.get('/comment/mv',{
+                mid:mid,
+            }).then(res=>{
+                console.log(res);
+                var mv=res.result;
+                $('#mv').find('img').eq(0).attr('src',mv.images.large);
+                $('#mv').find("h4").eq(0).html(mv.year);
+                $('#mv').find("h4").eq(1).html(mv.title);
+                $('#mv').find("p").eq(0).html(mv.rating.average);
+                $('#mv').find("p").eq(1).html(mv.genres);
+                $('#mv').find("p").eq(2).html(mv.directors[0].name);
+            })
+        }
+        getMovie(mid);
+        function change(id){
+            console.log(id)
+            getMovie(id);
+        }
+    </script>
+</body>
+</html>

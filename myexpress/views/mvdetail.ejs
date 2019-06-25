@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include common  %>
+    <title>当前电影评论</title>
+</head>
+<body>
+    <%- include("header",{title:"comment"}) %>
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6 col-lg-6">
+           <h2 class="text-success text-center"> 当前电影介绍</h2>
+           <div class="thumbnail">
+                <img src="<%- movie.images.large %>" alt="" style="height:240px;width:100%">
+                <div class="caption" data-mid="<%- movie.id%>"  >
+                    <h4 class="text-danger pull-right"> <%- movie.year %></h4>
+                    <h4 class="text-success"> <a href="/comment/index?mid=<%- movie.id %>"> <%-movie.title %> </a> </h4>
+                    <p class="h5 text-info"> 评分 : <%- movie.rating.average %> </p>
+                    <p class="h5 text-primary"> 分类 : <%- movie.genres %> </p>
+                    <p class="h5 text-danger"> 导演 : <%- movie.directors[0].name %> </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <h2 class="text-danger text-center"> 当前电影所有评论</h2>
+            <div class="well">
+            <%    comments.map((comment,index)=>{  %>
+                    <div class="caption" style="border-bottom:1px solid #6ff">
+                        <h4 class="text-danger pull-right"> <%- comment.time %></h4>
+                        <h4 class="text-success"> <a href=""> <%-comment.mTitle %> </a> </h4>
+                        <p class="h5 text-info"> 标题 : <%- comment.title %> </p>
+                        <p class="h5 text-primary"> 内容 : <%- comment.content %> </p>
+                        <p class="h5 text-danger"> 评论人 : <%- comment.username %> </p>
+                    </div>
+            <%    })     %>
+            </div>
+        </div>
+    </div>
+    <%- include footer %>
+</body>
+</html>

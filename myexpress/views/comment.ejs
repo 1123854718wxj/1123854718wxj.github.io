@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+    <title>电影评论</title>
+</head>
+
+<body>
+    <%- include("header",{title:'comment'}) %>
+    <div class="container-fluid">
+        <div class="col-md-6 col-sm-6 col-lg-6">
+            <h2 class="text-primary text-center">当前电影介绍</h2>
+            <div class="thumbnail">
+                <img src="<%- result.images.large%>" alt="" style="height:350px;width:100%">
+                <div class="caption" data-mid='<%- result.id %>'>
+                    <h4 class="text-danger pull-right"><%- result.year %></h4>
+                    <h4 class="text-success"> <a href="/comment/index?mid=<%- result.id %>"> <%-result.title %> </a>
+                    </h4>
+                    <p class="h5 text-info"> 评分 : <%- result.rating.average %> </p>
+                    <p class="h5 text-primary"> 分类 : <%- result.genres %> </p>
+                    <p class="h5 text-danger"> 导演 : <%- result.directors[0].name %> </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-6">
+                <h2 class="text-success text-center">添加电影评论</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="title">评论标题:</label>
+                        <input type="text" class="form-control" id="title" placeholder="请输入标题">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">评论内容:</label>
+                        <textarea class="form-control"  id="content" cols="30" rows="10"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="submitBtn">提交评论</button>
+                </form>
+            </div>
+    </div>
+
+    <%- include footer %>
+
+    <script>
+        $('#submitBtn').click(() => {
+            $.post("/comment/submit",{
+                title:$("#title").val(),
+                content:$("#content").val(),
+                mid:$(".caption").attr("data-mid")
+            }).then(res=>{
+                console.log(res);
+                alert(res.msg);
+                location.href = "/comment/mlist"
+            })
+        })
+
+        $(pageInit);
+        //  comment.ejs  /comment/index
+        function pageInit(){
+            $.extend(XHEDITOR.settings,{shortcuts:{"ctrl+enter":submitForm}});
+            // $("#ele").xheditor();
+            $("#content").xheditor({   //初始化 富文件编辑框
+                html5Upload:false,
+                upMultiple:"1",
+
+                upLinkRrl:"upload.html",
+                upLinkExt:"zip,rar,txt",
+
+                upImgUrl:"/comment/uploadImg",   // 图片上传的服务器  
+                upImgExt:"jpg,jpeg,gif,png",
+
+                upFlashUrl:"upload.php",
+                upFlashExt:"swf",
+
+                upMediaUrl:"upload.php",
+                upMediaExt:"wmv,avi,wma,mp3,mid"
+
+            });
+        };
+
+        function insertUpload(arrMsg){
+            console.log(arrMsg);
+            var i,msg;
+            for(var i=0;i<arrMsg.length;i++){
+                msg=arrMsg[i];
+                console.log(msg);
+                $("#uploadList").append('<option value="'+msg.id+'">'+msg.localname+'</option>')
+            }
+        };
+
+        function submitForm(){
+            $("#frmDemo").submit();
+        }
+    </script>
+</body>
+
+</html>

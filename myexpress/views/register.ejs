@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+    <title>注册</title>
+</head>
+
+<body>
+    <%- include("header",{title:'register'}) %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>欢迎注册</h2>
+                <form action="users/register" method="POST">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input name="username" type="text" class="form-control" id="username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname">昵称</label>
+                        <input name="nickname" type="text" class="form-control" id="nickname" placeholder="请输入昵称">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="repwd">确认密码</label>
+                        <input name="repwd" type="password" class="form-control" id="repwd" placeholder="请输入密码">
+                    </div>
+                    <button type="submit" class="btn btn-success">注册</button>
+                    <button type="reset" class="btn btn-danger">重置</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include footer %>
+</body>
+
+</html>

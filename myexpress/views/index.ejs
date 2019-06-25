@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include common %>
+  <title>首页</title>
+</head>
+
+<body>
+  <%- include("header",{title:'home'}) %>
+  <%if(username){%>
+  <h2>欢迎您 <%- username%></h2>
+  <%}%>
+  <%- include footer %>
+</body>
+
+</html>

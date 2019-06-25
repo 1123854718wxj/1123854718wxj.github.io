@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>评论列表</title>
+
+    <%- include common  %>
+</head>
+
+<body>
+    <%- include("header",{title:'mlist'}) %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <select id='select' class='form-control'>
+                    <option value='5' class="form-control">每页5条</option>
+                    <option value='10' class="form-control">每页10条</option>
+                    <option value='20' class="form-control">每20条</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-hover table-bordered table-striped">
+                    <caption class="h1 text-info">电影评论列表</caption>
+                    <tr class='text-danger text-center'>
+                        <td>序号</td>
+                        <td>电影标题</td>
+                        <td>电影图片</td>
+                        <td>评论标题</td>
+                        <td>评论内容</td>
+                        <td>评论人</td>
+                        <td>评论时间</td>
+                        <td>操作1</td>
+                        <td>操作2</td>
+                    </tr>
+                <%    if(result.length>0){  %>
+                <%    result.map((item,index)=>{    %>
+                        <tr class="text-center">
+                            <td><%- index+1 %></td>
+                            <td class="text-info"><a href="/comment/mvdetail?mid=<%- item.mid %>"><%- item.mTitle %></a></td>
+                            <td><img src="<%- item.atgs.images.large %>" alt="" style="width:100px;height:60px"></td>
+                            <td class="text-primary"><%- item.title %></td>
+                            <td><%- item.content %></td>
+                            <td><a href="/comment/my?username=<%- item.username%>"><%- item.username %></a></td>
+                            <td><%- item.time %></td>
+                            <td>    
+                                    <!-- JSON.stringify必须用单引号 -->
+                                    <%    if(username == item.username){  %>
+                                       <button  data-item='<%- JSON.stringify(item) %>' onclick="setUpdateItem('<%-item._id%>','<%-item.title%>',this)" class="btn btn-primary"  data-toggle="modal" data-target="#updatebox">修改</button>
+                                    <%    }   %>
+                            </td>
+                            <td>    
+                                    <%    if(username == item.username){  %>
+                                        <button onclick="setUid('<%- item._id %>')" class="btn btn-danger" data-toggle="modal" data-target="#delbox"  >删除</button>
+                                    <%    }   %>
+                            </td>
+                        </tr>
+                <%    })    %>
+                <tr>
+                        <td colspan="9">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                  <li>
+                                    <a href="/comment/mlist?pageNo=<%- pageNo -1  %>" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class= <%- pageNo-2 < 1 ? 'hidden':'' %> ><a href="/comment/mlist?pageNo=<%- pageNo-2 %>"><%- pageNo-2%></a></li>
+                                  <li class= <%- pageNo-1 < 1 ? 'hidden':'' %> ><a href="/comment/mlist?pageNo=<%- pageNo-1 %>"><%- pageNo-1%></a></li>
+                                  <li class="active pageNow" data-pageNo="<%- pageNo %>"><a href="/comment/mlist?pageNo=<%- pageNo %>"> <%- pageNo%> </a></li>
+                                  <li class= <%- pageNo+1 > totalPage ? 'hidden':'' %> ><a href="/comment/mlist?pageNo=<%- pageNo +1  %>"><%- pageNo+1 %></a></li>
+                                  <li class= <%- pageNo+2 > totalPage ? 'hidden':'' %> ><a href="/comment/mlist?pageNo=<%- pageNo +2 %>"><%- pageNo+2 %></a></li>
+                                  <li>
+                                    <a href="/comment/mlist?pageNo=<%- pageNo + 1  %>" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </nav>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">
+                            <p class="text-info ">
+                                  总 <%- totalPage %> 页  / 第 <%- pageNo %> 页   
+                            </p>
+                            <p class="text-info ">总 <%- total %> 条  / 每页 <%- pageSize %> 条</p>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td colspan="9">
+                                <button onclick="setUid(-1)" class="text-danger pull-right btn btn-danger"  data-toggle="modal" data-target="#delbox">删除所有</button>
+                        </td>
+                    </tr>   
+                <%    }else{    %>
+                        <tr>
+                            <td colspan="9">
+                                <h3 class="text-danger pull-right">暂无数据</h3>
+                            </td>
+                        </tr>
+                <%    }   %>  
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="delbox">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">友情提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你正在删除你的评论,是否确定?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="delById()" >确定</button>
+                </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="updatebox">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改评论</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group" >
+                        <label for="title">评论标题</label>
+                        <input  type="text" class="form-control" id="title" placeholder="评论标题">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">评论内容</label>
+                        <textarea class="form-control"  id="content" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="updateById()" >确定</button>
+                </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    <%- include footer %>
+    <script>
+        $('#select').val(10);
+        $('select').on('change',()=>{
+            var pageSize=$(this).val();
+            $.get('/comment/mlist',{
+                pageSize,
+                pageNo:$('.pageNow').attr('data-pageNo')
+            }).then(res=>{
+                console.log(res);
+            })
+        })
+
+        var uid=null;
+        function setUid(id){
+            uid=id;
+            console.log(uid)
+        }
+        function delById(){
+
+        $.ajax({
+            url:"/comment/delById",
+            data:{
+                uid:uid,
+            },
+            type:"GET",
+            success(res){
+                console.log(res);
+                if(!!res.type){
+                    window.location.reload();
+                }else{
+                    alert("删除失败");
+                    $("#delbox").modal("toggle");
+                }
+            }
+        })
+        }
+
+        var item={};
+        function setUpdateItem(id,title,that){
+            item=JSON.parse(that.getAttribute("data-item"));
+            $("#title").val(item.title);
+            $("#content").val(item.content);
+        }
+
+        function updateById(){
+            $.ajax({
+                url:"/comment/update",
+                data:{
+                    uid:item._id,
+                    title:$("#title").val(),
+                    content:$("#content").val()
+                },
+                success(res){
+                    if(!!res.type){
+                        location.reload();
+                    }else{
+                        alert("修改失败");
+                        $("#updatebox").modal("toggle");
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

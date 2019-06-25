@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include common %>
+    <title>登录</title>
+</head>
+
+<body>
+    <%- include("header",{title:'movie'}) %>
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="text-primary">Top20电影列表</h2>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" onclick="location.href='/movie?year=1'">年份升序</button>
+            <button class="btn btn-success" onclick="location.href='/movie?year=-1'">年份降序</button>
+            <button class="btn btn-info" onclick="location.href='/movie?rating.average=1'">评分升序</button>
+            <button class="btn btn-danger" onclick="location.href='/movie?rating.average=-1'">评分降序</button>
+        </div>
+        <div class="row">
+                <div class="form-group col-md-4">
+                        <label for="search">搜索</label>
+                        <input type="text" class="form-control" id="search" placeholder="请输入关键字">
+                </div>
+        </div>
+        <div class="row">
+            <%    result.map((item,index)=>{   %>
+            <div class="col-md-3 col-lg-3 col-sm-3">
+                <div class="thumbnail">
+                    <img src="<%- item.images.large %>" alt="" , style="height:240px;width:100%">
+                    <div>
+                        <h4 class="text-danger pull-right"><%- item.year %></h4>
+                        <h4 class="text-success"><a href="/comment/index?mid=<%- item.id %>"><%- item.title %></a></h4>
+                        <p class="h5 text-info">评分:<%- item.rating.average %></p>
+                        <p class="h5 text-primary"> 分类 : <%- item.genres %> </p>
+                        <p class="h5 text-danger"> 导演 : <%- item.directors[0].name %> </p>
+                    </div>
+                </div>
+            </div>
+            <%    })    %>
+        </div>
+    </div>
+
+    <%- include footer %>
+
+    <script>
+        $("#search").on("change",function(){
+            var keyword=$(this).val();
+            console.log(keyword);
+            location.href=`/movie?keyword=${keyword}`;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #666666; }
+
+li {
+  list-style: none; }
+
+img {
+  vertical-align: top;
+  border: 0; }
+
+.wrap {
+  width: 100%;
+  background-color: #fff;
+  font-size: 12px; }
+  .wrap .headerBox {
+    width: 100%;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #e2e2e2; }
+    .wrap .headerBox .header {
+      width: 1200px;
+      height: 24px;
+      background-color: #f1f1f1;
+      margin: 0 auto;
+      line-height: 24px; }
+      .wrap .headerBox .header .headerLeft {
+        float: left; }
+        .wrap .headerBox .header .headerLeft span {
+          position: relative; }
+          .wrap .headerBox .header .headerLeft span .twoCode {
+            position: absolute;
+            left: 0;
+            top: 21px;
+            background-color: #fff;
+            width: 300px;
+            height: 170px;
+            text-align: center;
+            border: 1px solid #eee;
+            display: none;
+            z-index: 1; }
+            .wrap .headerBox .header .headerLeft span .twoCode .appBox {
+              width: 149px;
+              height: 170px;
+              float: left;
+              border-right: 1px solid #eee; }
+              .wrap .headerBox .header .headerLeft span .twoCode .appBox img {
+                width: 120px;
+                height: 100px; }
+      .wrap .headerBox .header .headerRight {
+        float: right; }
+        .wrap .headerBox .header .headerRight .welcome {
+          float: left;
+          margin-right: 28px; }
+        .wrap .headerBox .header .headerRight .headerMy {
+          float: left; }
+          .wrap .headerBox .header .headerRight .headerMy li {
+            float: left;
+            margin-right: 16px; }
+          .wrap .headerBox .header .headerRight .headerMy li:nth-child(1), .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) {
+            position: relative; }
+            .wrap .headerBox .header .headerRight .headerMy li:nth-child(1) .newShowBox, .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) .newShowBox {
+              position: absolute;
+              right: 0;
+              top: 24px;
+              width: 95px;
+              box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+              text-align: center;
+              padding: 6px 0;
+              display: none; }
+          .wrap .headerBox .header .headerRight .headerMy li:nth-child(4) {
+            position: relative; }
+            .wrap .headerBox .header .headerRight .headerMy li:nth-child(4) .centerBox {
+              position: absolute;
+              right: 0;
+              top: 24px;
+              background-color: #fff;
+              width: 141px;
+              height: 100px;
+              text-align: center;
+              box-shadow: 1px 1px 1px #ccc;
+              display: none;
+              z-index: 1; }
+              .wrap .headerBox .header .headerRight .headerMy li:nth-child(4) .centerBox h3 {
+                color: #fa8b29; }
+              .wrap .headerBox .header .headerRight .headerMy li:nth-child(4) .centerBox p:last-child > a {
+                display: inline-block;
+                width: 50px;
+                height: 23px;
+                color: #fff;
+                background-color: skyblue; }
+  .wrap .logoBox {
+    width: 100%;
+    background-color: #fff; }
+    .wrap .logoBox .logo {
+      width: 1200px;
+      margin: 0 auto;
+      height: 86px; }
+      .wrap .logoBox .logo .logoImg {
+        width: 322px;
+        padding-top: 11px;
+        float: left; }
+        .wrap .logoBox .logo .logoImg img {
+          width: 100%; }
+      .wrap .logoBox .logo .searchBox {
+        width: 440px;
+        height: 86px;
+        float: left;
+        margin-left: 46px; }
+        .wrap .logoBox .logo .searchBox .search {
+          height: 34px;
+          margin-top: 18px; }
+          .wrap .logoBox .logo .searchBox .search input {
+            width: 337px;
+            height: 30px;
+            border: 2px solid #ff6600;
+            float: left;
+            outline: none; }
+          .wrap .logoBox .logo .searchBox .search a {
+            display: block;
+            float: left;
+            width: 99px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            background-color: #ff6600;
+            color: #fff;
+            border-radius: 0px 4px 4px 0px; }
+        .wrap .logoBox .logo .searchBox ol {
+          height: 34px;
+          margin-top: 8px; }
+          .wrap .logoBox .logo .searchBox ol li {
+            float: left;
+            height: 12px; }
+            .wrap .logoBox .logo .searchBox ol li a {
+              border-right: 1px solid #a076a0;
+              padding: 0px 17px; }
+  .wrap .menuBox {
+    width: 100%;
+    background-color: #10286c; }
+    .wrap .menuBox .menu {
+      width: 1200px;
+      height: 40px;
+      margin: 0 auto; }
+      .wrap .menuBox .menu .allGoods {
+        width: 179px;
+        height: 40px;
+        background-color: #ff6600;
+        text-align: center;
+        line-height: 40px;
+        float: left; }
+        .wrap .menuBox .menu .allGoods a {
+          color: #fff; }
+        .wrap .menuBox .menu .allGoods .icon-arrow-down {
+          color: #fff;
+          font-size: 4px;
+          margin-left: 16px; }
+      .wrap .menuBox .menu ul li {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        text-align: center; }
+        .wrap .menuBox .menu ul li a {
+          color: #fff;
+          padding: 0 20px; }
+      .wrap .menuBox .menu .shoppingCar {
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        background-color: #ff6600; }
+        .wrap .menuBox .menu .shoppingCar a {
+          display: block;
+          float: left;
+          width: 115px;
+          height: 38px;
+          line-height: 40px;
+          text-align: center;
+          color: #fff; }
+          .wrap .menuBox .menu .shoppingCar a .icon-arrow-down {
+            font-size: 4px;
+            color: #fff; }
+        .wrap .menuBox .menu .shoppingCar div {
+          float: left;
+          color: #fa8b29; }
+        .wrap .menuBox .menu .shoppingCar a:nth-child(1) {
+          position: relative; }
+          .wrap .menuBox .menu .shoppingCar a:nth-child(1) .shoppingShadow {
+            position: absolute;
+            left: -2px;
+            top: 38px;
+            width: 234px;
+            min-height: 112px;
+            background-color: #fff;
+            color: #666666;
+            text-align: center;
+            line-height: 112px;
+            border: 2px solid #ff6600;
+            border-top-style: none;
+            display: none; }
+        .wrap .menuBox .menu .shoppingCar a:last-child {
+          position: relative; }
+          .wrap .menuBox .menu .shoppingCar a:last-child .promShadow {
+            position: absolute;
+            right: -2px;
+            top: 38px;
+            width: 234px;
+            min-height: 112px;
+            background-color: #fff;
+            border: 2px solid #ff6600;
+            border-top-style: none;
+            padding-top: 30px;
+            display: none;
+            color: #666666; }
+  .wrap .mainBox {
+    width: 1200px;
+    margin: 0 auto; }
+    .wrap .mainBox .mainFirst {
+      width: 1200px; }
+      .wrap .mainBox .mainFirst ul {
+        width: 175px;
+        height: 445px;
+        border: 2px solid #ff6600;
+        float: left; }
+        .wrap .mainBox .mainFirst ul li {
+          padding: 0px 22px 18px 5px;
+          border-bottom: 1px solid #e5e5e5;
+          /* 二级导航 */ }
+          .wrap .mainBox .mainFirst ul li p {
+            margin-top: 15px; }
+          .wrap .mainBox .mainFirst ul li .icon-right {
+            float: right; }
+          .wrap .mainBox .mainFirst ul li p:nth-child(1) {
+            font-size: 14px;
+            font-weight: bolder; }
+          .wrap .mainBox .mainFirst ul li p:nth-child(2) {
+            margin-left: 19px; }
+          .wrap .mainBox .mainFirst ul li p:nth-child(3) {
+            margin-left: 19px; }
+          .wrap .mainBox .mainFirst ul li .navFirst {
+            position: absolute;
+            width: 783px;
+            height: 518px;
+            background-color: #fff;
+            left: 177px;
+            top: -17px;
+            box-shadow: 1px 1px 5px #666666;
+            z-index: 999;
+            display: none; }
+            .wrap .mainBox .mainFirst ul li .navFirst .hotBox a {
+              display: inline-block;
+              height: 40px;
+              overflow: hidden; }
+            .wrap .mainBox .mainFirst ul li .navFirst .mateImg {
+              width: 650px;
+              height: 238px;
+              float: left; }
+              .wrap .mainBox .mainFirst ul li .navFirst .mateImg img {
+                width: 100%;
+                height: 100%; }
+        .wrap .mainBox .mainFirst ul li:last-child {
+          border: 0px; }
+        .wrap .mainBox .mainFirst ul li:nth-child(1), .wrap .mainBox .mainFirst ul .headerBox .header .headerRight .headerMy li:nth-child(2), .wrap .headerBox .header .headerRight .headerMy .mainBox .mainFirst ul li:nth-child(2) {
+          position: relative; }
+        .wrap .mainBox .mainFirst ul .navTable {
+          width: 540px;
+          float: left;
+          margin: 7px 0 0  20px; }
+          .wrap .mainBox .mainFirst ul .navTable th {
+            font-weight: bolder;
+            line-height: 40px;
+            color: #484848; }
+          .wrap .mainBox .mainFirst ul .navTable td {
+            padding-left: 9px;
+            line-height: 40px; }
+      .wrap .mainBox .mainFirst .bannerMove {
+        width: 771px;
+        height: 245px;
+        float: left;
+        margin: 5px;
+        position: relative;
+        overflow: hidden; }
+        .wrap .mainBox .mainFirst .bannerMove #imgBox {
+          position: absolute;
+          width: 5397px; }
+          .wrap .mainBox .mainFirst .bannerMove #imgBox img {
+            float: left; }
+        .wrap .mainBox .mainFirst .bannerMove ol {
+          position: absolute;
+          right: 5px;
+          bottom: 9px; }
+          .wrap .mainBox .mainFirst .bannerMove ol li {
+            float: left;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-left: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 25px; }
+          .wrap .mainBox .mainFirst .bannerMove ol .active {
+            background-color: #ff6600; }
+      .wrap .mainBox .mainFirst .rightImg {
+        width: 238px;
+        float: right; }
+        .wrap .mainBox .mainFirst .rightImg img {
+          width: 100%; }
+        .wrap .mainBox .mainFirst .rightImg img:first-child {
+          margin-bottom: 10px; }
+      .wrap .mainBox .mainFirst .goodsMove {
+        width: 771px;
+        height: 256px;
+        background-color: #fff;
+        float: left;
+        margin: 5px;
+        overflow: hidden; }
+        .wrap .mainBox .mainFirst .goodsMove .goodsMoveTitle {
+          line-height: 30px;
+          font-size: 18px; }
+          .wrap .mainBox .mainFirst .goodsMove .goodsMoveTitle span:first-child {
+            display: inline-block;
+            margin-left: 10px;
+            color: #f00; }
+          .wrap .mainBox .mainFirst .goodsMove .goodsMoveTitle span:nth-child(2) {
+            display: inline-block;
+            margin-left: 210px; }
+          .wrap .mainBox .mainFirst .goodsMove .goodsMoveTitle a {
+            float: right; }
+        .wrap .mainBox .mainFirst .goodsMove .goodsShow {
+          width: 771px;
+          position: relative; }
+          .wrap .mainBox .mainFirst .goodsMove .goodsShow #showSwipper {
+            position: absolute;
+            left: 0;
+            width: 9252px;
+            min-height: 256px; }
+            .wrap .mainBox .mainFirst .goodsMove .goodsShow #showSwipper li {
+              float: left;
+              width: 197px;
+              height: 60px; }
+              .wrap .mainBox .mainFirst .goodsMove .goodsShow #showSwipper li p {
+                height: 60px; }
+              .wrap .mainBox .mainFirst .goodsMove .goodsShow #showSwipper li img {
+                width: 100%; }
+              .wrap .mainBox .mainFirst .goodsMove .goodsShow #showSwipper li span {
+                color: #ff6600;
+                font-weight: 900; }
+  .wrap .registerMsBox {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 32px; }
+    .wrap .registerMsBox .registerMs {
+      width: 1118px;
+      height: 334px;
+      margin: 0 auto;
+      border: 1px solid #86bf86;
+      background-color: #e5ffe5; }
+      .wrap .registerMsBox .registerMs .msBox {
+        width: 449px;
+        height: 53px;
+        display: flex;
+        align-items: center;
+        margin: 26px 0 12px 89px;
+        color: #ff6600; }
+        .wrap .registerMsBox .registerMs .msBox img {
+          width: 51px;
+          height: 53px; }
+      .wrap .registerMsBox .registerMs p {
+        margin: 0 0 43px 141px;
+        color: #484848; }
+      .wrap .registerMsBox .registerMs a {
+        color: blue;
+        font-size: 16px;
+        margin-left: 141px; }
+  .wrap .footer {
+    width: 100%;
+    padding: 55px 0 19px 0;
+    background-color: #fff;
+    float: left; }
+    .wrap .footer .footer_content {
+      width: 1200px;
+      margin: 0 auto;
+      color: #484848;
+      text-align: center; }
+      .wrap .footer .footer_content p:nth-child(1) {
+        margin-bottom: 12px; }

@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #666666; }
+
+li {
+  list-style: none; }
+
+img {
+  vertical-align: top;
+  border: 0; }
+
+.wrap {
+  width: 100%;
+  background-color: #f1f1f1;
+  font-size: 12px; }
+  .wrap .headerBox {
+    width: 100%;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #e2e2e2; }
+    .wrap .headerBox .header {
+      width: 960px;
+      height: 24px;
+      background-color: #f1f1f1;
+      margin: 0 auto;
+      line-height: 24px; }
+      .wrap .headerBox .header .headerLeft {
+        float: left;
+        position: relative; }
+        .wrap .headerBox .header .headerLeft span .twoCode {
+          position: absolute;
+          left: 0;
+          top: 21px;
+          background-color: #fff;
+          width: 300px;
+          height: 170px;
+          text-align: center;
+          border: 1px solid #eee;
+          display: none;
+          z-index: 1; }
+          .wrap .headerBox .header .headerLeft span .twoCode .appBox {
+            width: 149px;
+            height: 170px;
+            float: left;
+            border-right: 1px solid #eee; }
+            .wrap .headerBox .header .headerLeft span .twoCode .appBox img {
+              width: 120px;
+              height: 100px; }
+      .wrap .headerBox .header .headerRight {
+        float: right; }
+        .wrap .headerBox .header .headerRight .welcome {
+          float: left;
+          margin-right: 28px; }
+        .wrap .headerBox .header .headerRight .headerMy {
+          float: left; }
+          .wrap .headerBox .header .headerRight .headerMy li {
+            float: left;
+            margin-right: 16px; }
+          .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) {
+            position: relative; }
+            .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) .centerBox {
+              position: absolute;
+              right: 0;
+              top: 24px;
+              background-color: #fff;
+              width: 141px;
+              height: 100px;
+              text-align: center;
+              box-shadow: 1px 1px 1px #ccc;
+              display: none;
+              z-index: 1; }
+              .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) .centerBox h3 {
+                color: #fa8b29; }
+              .wrap .headerBox .header .headerRight .headerMy li:nth-child(2) .centerBox p:last-child > a {
+                display: inline-block;
+                width: 50px;
+                height: 23px;
+                color: #fff;
+                background-color: skyblue; }
+  .wrap .welcomeBox {
+    width: 100%;
+    background-color: #fff; }
+    .wrap .welcomeBox .logoLogin {
+      width: 960px;
+      height: 82px;
+      margin: 0 auto;
+      padding-top: 25px; }
+      .wrap .welcomeBox .logoLogin img {
+        float: left;
+        margin-right: 26px; }
+      .wrap .welcomeBox .logoLogin .welcomeTitle {
+        width: 148px;
+        height: 49px;
+        border-left: 1px solid #d9d9d9;
+        float: left;
+        font-size: 24px;
+        text-align: center;
+        line-height: 49px;
+        color: #484848; }
+  .wrap .mainBox {
+    width: 100%; }
+    .wrap .mainBox .contentBox {
+      margin: 0 auto;
+      width: 960px;
+      height: 441px;
+      padding: 44px 0; }
+      .wrap .mainBox .contentBox .login_bg {
+        width: 370px;
+        height: 319px;
+        float: left; }
+        .wrap .mainBox .contentBox .login_bg img {
+          width: 100%; }
+      .wrap .mainBox .contentBox .login_right {
+        width: 362px;
+        height: 397px;
+        border: 1px solid #CCC;
+        background-color: #fff;
+        float: right; }
+        .wrap .mainBox .contentBox .login_right form {
+          padding: 19px 25px 15px 30px; }
+          .wrap .mainBox .contentBox .login_right form .login_form p:first-child {
+            margin: 20px 0 25px 0; }
+          .wrap .mainBox .contentBox .login_right form .login_form input {
+            width: 256px;
+            height: 30px;
+            border: 1px solid #cfcfcf; }
+          .wrap .mainBox .contentBox .login_right form .buttonBox {
+            padding: 19px 25px 15px 40px;
+            line-height: 32px; }
+            .wrap .mainBox .contentBox .login_right form .buttonBox input {
+              display: block;
+              width: 101px;
+              height: 32px;
+              background-color: #f7661f;
+              color: #fff;
+              text-align: center;
+              line-height: 32px;
+              border-radius: 3px;
+              border: none;
+              float: left; }
+            .wrap .mainBox .contentBox .login_right form .buttonBox a:nth-child(2) {
+              margin: 0 18px 0 4px;
+              color: blue; }
+            .wrap .mainBox .contentBox .login_right form .buttonBox a:nth-child(3) {
+              color: blue; }
+        .wrap .mainBox .contentBox .login_right .login_title {
+          padding: 19px 25px 15px 30px; }
+          .wrap .mainBox .contentBox .login_right .login_title .login_new {
+            float: right; }
+            .wrap .mainBox .contentBox .login_right .login_title .login_new a {
+              color: blue; }
+        .wrap .mainBox .contentBox .login_right h2 {
+          float: left; }
+  .wrap .footer {
+    padding: 55px 0 19px 0;
+    background-color: #fff; }
+    .wrap .footer .footer_content {
+      width: 960px;
+      margin: 0 auto;
+      color: #484848;
+      text-align: center; }
+      .wrap .footer .footer_content p:nth-child(1) {
+        margin-bottom: 12px; }

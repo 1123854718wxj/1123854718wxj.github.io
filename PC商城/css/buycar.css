@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+img {
+  vertical-align: top;
+  border: 0; }
+
+.wrap {
+  width: 100%;
+  background-color: #fff;
+  font-size: 12px; }
+  .wrap .headerBox {
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2; }
+    .wrap .headerBox .header {
+      width: 960px;
+      overflow: hidden;
+      padding: 32px 0 40px 0;
+      margin: 0 auto; }
+      .wrap .headerBox .header .headerLeft {
+        float: left;
+        width: 317px;
+        height: 65px; }
+      .wrap .headerBox .header .headerRight {
+        float: right; }
+        .wrap .headerBox .header .headerRight .headerTop {
+          line-height: 16px;
+          margin-bottom: 20px; }
+          .wrap .headerBox .header .headerRight .headerTop .tel {
+            float: right; }
+  .wrap .buycarBox {
+    width: 100%;
+    background-color: #fff; }
+    .wrap .buycarBox .buycarcontent {
+      width: 960px;
+      min-height: 218px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      margin-top: 65px; }
+      .wrap .buycarBox .buycarcontent .buycarTitle1 {
+        width: 773px;
+        height: 32px;
+        padding-left: 10px;
+        border-bottom: 1px solid #ccc;
+        line-height: 32px;
+        float: left; }
+      .wrap .buycarBox .buycarcontent .buycarTitle2 {
+        width: 166px;
+        height: 32px;
+        padding-left: 10px;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        line-height: 32px;
+        float: right;
+        background-color: #ffffcc; }
+      .wrap .buycarBox .buycarcontent table {
+        width: 782px;
+        float: left; }
+        .wrap .buycarBox .buycarcontent table .checkbox .check-one {
+          margin-left: 24px; }
+        .wrap .buycarBox .buycarcontent table .goods {
+          width: 400px; }
+          .wrap .buycarBox .buycarcontent table .goods img {
+            width: 100px;
+            height: 80px; }
+          .wrap .buycarBox .buycarcontent table .goods span {
+            display: inline-block;
+            width: 285px;
+            margin-top: 20px; }
+        .wrap .buycarBox .buycarcontent table .price {
+          text-align: center; }
+        .wrap .buycarBox .buycarcontent table .subtotal {
+          text-align: center; }
+        .wrap .buycarBox .buycarcontent table .operation {
+          text-align: center; }
+        .wrap .buycarBox .buycarcontent table .count {
+          text-align: center; }
+          .wrap .buycarBox .buycarcontent table .count .count-input {
+            width: 38px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px; }
+          .wrap .buycarBox .buycarcontent table .count .inlineblock {
+            display: inline-block;
+            vertical-align: middle; }
+          .wrap .buycarBox .buycarcontent table .count span {
+            cursor: pointer; }
+          .wrap .buycarBox .buycarcontent table .count .add {
+            width: 13px;
+            height: 11px;
+            display: block;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 11px;
+            font-size: 9px; }
+          .wrap .buycarBox .buycarcontent table .count .reduce {
+            width: 13px;
+            height: 11px;
+            display: block;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 11px;
+            font-size: 9px; }
+        .wrap .buycarBox .buycarcontent table .operation .delete {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+          background-color: gray;
+          border-radius: 5px; }
+      .wrap .buycarBox .buycarcontent .sumBox {
+        float: right;
+        width: 176px;
+        min-height: 218px;
+        border-left: 1px solid #ccc;
+        background-color: #ffffcc; }
+        .wrap .buycarBox .buycarcontent .sumBox .priceBox {
+          width: 176px;
+          margin-bottom: 30px; }
+          .wrap .buycarBox .buycarcontent .sumBox .priceBox .priceTitle, .wrap .buycarBox .buycarcontent .sumBox .priceBox .sumPrice {
+            margin: 0 10px 0 10px;
+            height: 30px;
+            width: 156px; }
+          .wrap .buycarBox .buycarcontent .sumBox .priceBox .left {
+            float: left;
+            color: orange; }
+          .wrap .buycarBox .buycarcontent .sumBox .priceBox .right {
+            float: right; }
+        .wrap .buycarBox .buycarcontent .sumBox a {
+          margin: 0 10px;
+          display: block;
+          overflow: hidden;
+          float: left; }
+        .wrap .buycarBox .buycarcontent .sumBox a {
+          width: 155px;
+          height: 48px;
+          color: #fff;
+          background-color: #767676;
+          border-radius: 2px;
+          text-align: center;
+          line-height: 48px;
+          margin-bottom: 14px; }
+  .wrap .footer {
+    padding: 55px 0 19px 0;
+    background-color: #fff; }
+    .wrap .footer .footer_content {
+      width: 960px;
+      margin: 0 auto;
+      color: #484848;
+      text-align: center; }
+      .wrap .footer .footer_content p:nth-child(1) {
+        margin-bottom: 12px; }
+
+.shadowBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+  .shadowBox .shadow {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 50%;
+    margin: auto; }
+    .shadowBox .shadow img {
+      width: 100%; }

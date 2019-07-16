@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #666666; }
+
+li {
+  list-style: none; }
+
+img {
+  vertical-align: top;
+  border: 0; }
+
+body {
+  user-select: none; }
+
+.wrap {
+  width: 100%;
+  background-color: #f1f1f1;
+  font-size: 12px; }
+  .wrap .header {
+    width: 980px;
+    height: 24px;
+    background-color: #f1f1f1;
+    margin: 0 auto;
+    line-height: 24px;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0 10px; }
+    .wrap .header .headerLeft {
+      float: left;
+      position: relative; }
+      .wrap .header .headerLeft span .twoCode {
+        position: absolute;
+        left: 0;
+        top: 21px;
+        background-color: #fff;
+        width: 300px;
+        height: 170px;
+        text-align: center;
+        border: 1px solid #eee;
+        display: none;
+        z-index: 1; }
+        .wrap .header .headerLeft span .twoCode .appBox {
+          width: 149px;
+          height: 170px;
+          float: left;
+          border-right: 1px solid #eee; }
+          .wrap .header .headerLeft span .twoCode .appBox img {
+            width: 120px;
+            height: 100px; }
+    .wrap .header .headerRight {
+      float: right; }
+      .wrap .header .headerRight .welcome {
+        float: left;
+        margin-right: 28px; }
+      .wrap .header .headerRight .headerMy {
+        float: left; }
+        .wrap .header .headerRight .headerMy li {
+          float: left;
+          margin-right: 16px; }
+        .wrap .header .headerRight .headerMy li:nth-child(2) {
+          position: relative; }
+          .wrap .header .headerRight .headerMy li:nth-child(2) .centerBox {
+            position: absolute;
+            right: 0;
+            top: 24px;
+            background-color: #fff;
+            width: 141px;
+            height: 100px;
+            text-align: center;
+            box-shadow: 1px 1px 1px #ccc;
+            display: none;
+            z-index: 1; }
+            .wrap .header .headerRight .headerMy li:nth-child(2) .centerBox h3 {
+              color: #fa8b29; }
+            .wrap .header .headerRight .headerMy li:nth-child(2) .centerBox p:last-child > a {
+              display: inline-block;
+              width: 50px;
+              height: 23px;
+              color: #fff;
+              background-color: skyblue; }
+  .wrap .welcomeBox {
+    width: 100%;
+    background-color: #fff; }
+    .wrap .welcomeBox .logoLogin {
+      width: 980px;
+      height: 82px;
+      margin: 0 auto;
+      padding-top: 25px; }
+      .wrap .welcomeBox .logoLogin img {
+        float: left;
+        margin-right: 26px; }
+      .wrap .welcomeBox .logoLogin .welcomeTitle {
+        width: 148px;
+        height: 49px;
+        border-left: 1px solid #d9d9d9;
+        float: left;
+        font-size: 24px;
+        text-align: center;
+        line-height: 49px;
+        color: #484848; }
+  .wrap .registerBox {
+    width: 100%;
+    background-color: #fff; }
+    .wrap .registerBox .registerDiv {
+      width: 980px;
+      margin: 0 auto; }
+      .wrap .registerBox .registerDiv .registerTitle {
+        width: 97px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        text-align: center;
+        line-height: 40px; }
+      .wrap .registerBox .registerDiv form {
+        width: 742px;
+        height: 458px;
+        border: 1px solid #ccc;
+        padding: 35px 0 0 20px;
+        float: left; }
+        .wrap .registerBox .registerDiv form p:nth-child(1) input, .wrap .registerBox .registerDiv form p:nth-child(2) input, .wrap .registerBox .registerDiv form p:nth-child(3) input, .wrap .registerBox .registerDiv form p:nth-child(4) input {
+          width: 250px;
+          height: 30px;
+          margin-bottom: 18px; }
+        .wrap .registerBox .registerDiv form p:nth-child(4) input {
+          width: 62px; }
+        .wrap .registerBox .registerDiv form p:nth-child(5) {
+          margin: 8px 0px 27px 53px; }
+        .wrap .registerBox .registerDiv form p:nth-child(6) {
+          margin-left: 53px; }
+          .wrap .registerBox .registerDiv form p:nth-child(6) input {
+            width: 205px;
+            height: 32px;
+            background-color: #f7661f;
+            color: #fff;
+            border: none;
+            border-radius: 5px; }
+  .wrap .registerRight {
+    width: 214px;
+    height: 493px;
+    border: 1px solid #ccc;
+    float: right; }
+    .wrap .registerRight .firstBox {
+      height: 116px;
+      text-align: center;
+      padding-top: 38px;
+      border-bottom: 1px solid #ccc;
+      font-size: 18px; }
+      .wrap .registerRight .firstBox h3 {
+        margin-bottom: 13px; }
+      .wrap .registerRight .firstBox a {
+        color: blue; }
+    .wrap .registerRight .sencondBox {
+      text-align: center;
+      font-size: 18px;
+      padding-top: 47px; }
+      .wrap .registerRight .sencondBox h3 {
+        margin-bottom: 14px; }
+  .wrap .footer {
+    width: 100%;
+    padding: 55px 0 19px 0;
+    background-color: #fff;
+    float: left; }
+    .wrap .footer .footer_content {
+      width: 960px;
+      margin: 0 auto;
+      color: #484848;
+      text-align: center; }
+      .wrap .footer .footer_content p:nth-child(1), .wrap .footer .footer_content .registerBox .registerDiv form p:nth-child(2), .wrap .registerBox .registerDiv form .footer .footer_content p:nth-child(2), .wrap .footer .footer_content .registerBox .registerDiv form p:nth-child(3), .wrap .registerBox .registerDiv form .footer .footer_content p:nth-child(3), .wrap .footer .footer_content .registerBox .registerDiv form p:nth-child(4), .wrap .registerBox .registerDiv form .footer .footer_content p:nth-child(4) {
+        margin-bottom: 12px; }

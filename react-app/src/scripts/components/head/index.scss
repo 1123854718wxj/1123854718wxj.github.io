@@ -1,0 +1,23 @@
+.logo{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left:10px;
+    top:2px;
+    animation: move 20s 0.5s linear infinite;
+}
+.myHead{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+}
+@keyframes move{
+    0%{
+        transform: rotate(3600deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

@@ -1,0 +1,99 @@
+{ 
+    "_id" : ObjectId("5d25afe6947ffc2d00156266"), 
+    "userName" : "18064129702", 
+    "title" : "html5 新特性   CSS3 新特性", 
+    "type" : "HTML5", 
+    "text" : " html5 新特性\n用于绘画的 canvas 元素\n用于媒介回放的 video 和 audio 元素\n对本地离线存储的更好的支持 localStorage&sessionStorage\n新的特殊内容元素，比如 article、footer、header、nav、section\n新的表单控件，比如 calendar、date、time、email、url、search\ncss3 新特性\n阴影 文本阴影text-shadow 盒子阴影 box-shadow\n边框圆角 border-radius\n边框图片border-image\n过渡trasition\nanimation动画\n2D 3D动画\n伪类选择器 first-child last-child nth-child(n)\n背景： 背景大小 background-size 背景原点background-origin 多背景background: url() ,url(),url()\n渐变 ： 线性渐变：background-image:linear-gradient(渐变方向开始和结束状态，渐变范围（距离）) 径向渐变background-image:radial-gradient(圆点，开始、结束)", 
+    "time" : ISODate("2019-07-10T09:29:10.829+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b00a947ffc2d00156267"), 
+    "userName" : "18064129702", 
+    "title" : "本地存储指的是什么? localStorage&sessionStorage 的区别?", 
+    "type" : "HTML5", 
+    "text" : "本地存储指的是储存在用户本地终端上的数据\nsessionStorage，只会在窗口打开的时候才有效，一次性缓存会话，关闭浏览器自动释放\nlocalStorage，只要没有手动清除，就会一直保留，永久存储，以文件形式存储\nHTML5提出的一个新的特性：离线存储。通过离线存储，我们可以通过把需要离线存储在本地的文件列在一个manifest配置文件中，这样即使在离线的情况下，用户也可以正常使用App。\n\n通过本地存储（Local Storage），web 应用程序能够在用户浏览器中对数据进行本地的存储。\n在 HTML5 之前，应用程序数据只能存储在 cookie 中，包括每个服务器请求。本地存储则更安全，并且可在不影响网站性能的前提下将大量数据存储于本地。\n与 cookie 不同，存储限制要大得多（至少5MB），并且信息不会被传输到服务器。\n本地存储经由起源地（origin）（经由域和协议）。所有页面，从起源地，能够存储和访问相同的数据。", 
+    "time" : ISODate("2019-07-10T09:29:46.590+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b020947ffc2d00156268"), 
+    "userName" : "18064129702", 
+    "title" : "前端性能优化的方法有哪些?", 
+    "type" : "HTML5", 
+    "text" : "1.优化图片资源的格式和大小\n2.开启网络压缩\n3.使用浏览器缓存\n4.减少重定向请求\n5.使用CDN存储静态资源\n6.减少DNS查询次数\n7.压缩css和js内容", 
+    "time" : ISODate("2019-07-10T09:30:08.462+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b03d947ffc2d00156269"), 
+    "userName" : "18064129702", 
+    "title" : "浏览器兼容的bug有哪些", 
+    "type" : "HTML5", 
+    "text" : "一、不同浏览器的标签默认的外边界和内填充不同\n解决方案：css里 *{margin:0; padding:0;}\n　二、块属性标签float后，又有横向的margin情况下，在IE6显示margin比设置的大\n解决方案：在float的标签样式控制中加入display:inline;转化为行内属性\n三、设置较小高度标签(一般小于10px)，在IE6、IE7，遨游中高度超出设置高度值\n解决方案：给超出高度的标签设置overflow:hidden;或者设置行高line-height小于你设置的高度\n四，标签最低高度设置min-height不兼容\n　　解决方案：如果设置一个标签最小高度为200px，需要进行设置 {min-height:200px; height:auto !important;height: 200px; overflow:visible;}", 
+    "time" : ISODate("2019-07-10T09:30:37.400+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b05f947ffc2d0015626a"), 
+    "userName" : "18064129702", 
+    "title" : "哪些常用的node模块", 
+    "type" : "NodeJs", 
+    "text" : "var httpModule=require('http');\n\"http\":HTTP是Node.js提供的原生模块，该模块中有createServer、request和get等多个方法和属性\n\n文件处理\nFile System模块介绍 \n文件IO是由标准POSIX函数封装而成的，需要使用require(‘fs’)访问这个模块。所有方法都提供了同步和异步2种方式 \nfs.rename(path1,path2,[callback])异步调用函数对应fs.renameSync(path1,path2)同步调用函数，作用功能都是相同的 ，但是接口是一个同步接口，因此调用方式有所区别。\n\n路由处理\n根据不同客户端的请求资源路径，来分配服务器处理逻辑。\nURL模块作用：处理客户端请求过来的URL  代码步骤：导入 URL 核心模块 导入 HTTP 核心模块 监听客户端的请求（在这中间处理客户端请求过来的URL） 处理客户端的请求 开启服务器\n特定规则\n可以根据用户请求的url，依据特定的规则得到执行函数。\nGET和POST\nNode.js中HTTP客户端发送的GET请求参数都存储在request对象中的url属性中。\n\nQuery Strings模块\n作用：处理客户端通过get/post请求传递过来的参数\n使用关键点：\n\n需要导入 ‘querystring’ 这个核心模块\nget请求时 querystring 一般是配合 url 核心模块一起使用的\nget/post请求最终都需要调用 querystring.parse方法，将请求传递过来的键值对字符串转成js对象，方便操作。\n注意：\nget/post的请求方式是不一样的，客户端传递过来时，参数放在的地方是不一样的，所以服务器端处理方式也不太一样。\n\nFile System模块\n前提：以后的所有静态资源（html、css、js、图片等）都是放在服务端的，如果浏览器需要这些html、css、js、图片等资源，则需要先将其读取到node.exe的内容中，然后再返回给浏览器。\n作用：\n在服务端来操作文件，可能是需要将浏览器上传的图片保存到服务器，也可能是需要将服务器的资源读取之后返回给浏览器。\n代码步骤：\n导入 fs 核心模块\n使用相应的方法来写入文件、读取文件等操作\n注意点：\n目录 fs它是不会自动帮我们创建的需要我们自己手工创建文件如果不存在，调用 writeFile 与 appendFile 方法会自动帮我们创建。\n\nPath模块\n作用：操作文件的路径，为文件操作服务。\n常用的几个函数：\npath.join(第一个路径,第二个路径) : 拼接路径\nGlobal模块\n作用：\n全局共享的，不需要导入模块即可以使用\n常用的属性：\n__dirname : 文件所在的文件夹路径\n__filename : 文件所在的路径\nrequire() : 导入需要的模块\nmodule : 自定义模块时用到\nexports : 自定义模块时用到", 
+    "time" : ISODate("2019-07-10T09:31:11.822+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b09d947ffc2d0015626b"), 
+    "userName" : "18064129702", 
+    "title" : "6 个 vue 指令 分别说明什么意思", 
+    "type" : "Vue", 
+    "text" : "v-if指令：v-if是条件渲染指令，它根据表达式的真假来删除和插入元素\nv-show指令：v-show和v-if区别=>v-show不管条件是否成立，都会渲染html,而v-if只有条件成立才会渲染\nv-else指令:v-else指令与v-if或者v-show同时使用，v-if条件不成立则会显示v-else内容\nv-for指令:v-for指令基于一个数组渲染一个列表，它和JavaScript的遍历语法相似,v-for=\"item in list”,list是一个数组，item是当前遍历的数组元素=>v-for=\"(item,index) in list\"其中index是当前循环的索引，下标从0开始\n·注意：处于同一节点，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。如果你的目的是有条件地跳过循环的执行，那么可以将 v-if 置于外层元素 (或 <template>)上。\nv-bind指令(简写“：”):v-bind动态地绑定一个或多个特性，可以在其名称后面带一个参数，中间放一个冒号隔开，这个参数通常是HTML元素的特性（attribute），如v-bind: class,class可以和v-bind:class同时存在 ，也就是说有class了，再添加v-bind:class并不会覆盖原来的样式类，而是在原来基础上添加新的类名\nv-on指令(简写“@”)：v-on用于监听DOM事件,用法和v-bind类似，例如给button添加点击事件<button v-on:click=\"show”>也可用@符号代替，修改代码：<button @click=\"show\">", 
+    "time" : ISODate("2019-07-10T09:32:13.209+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b0c1947ffc2d0015626c"), 
+    "userName" : "18064129702", 
+    "title" : "说一下vue 如何实现数据双向绑定  底层原理", 
+    "type" : "Vue", 
+    "text" : "双向绑定原理\nvue的双向绑定是由数据劫持结合发布者－订阅者模式实现的，那么什么是数据劫持？vue是如何进行数据劫持的？说白了就是通过Object.defineProperty()来劫持对象属性的setter和getter操作，在数据变动时做你想要做的事情\n我们已经知道实现数据的双向绑定，首先要对数据进行劫持监听，所以我们需要设置一个监听器Observer，用来监听所有属性。如果属性发生变化了，就需要告诉订阅者Watcher看是否需要更新。因为订阅者是有很多个，所以我们需要有一个消息订阅器Dep来专门收集这些订阅者，然后在监听器Observer和订阅者Watcher之间进行统一管理的。接着，我们还需要有一个指令解析器Compile，对每个节点元素进行扫描和解析，将相关指令（如v-model，v-on）对应初始化成一个订阅者Watcher，并替换模板数据或者绑定相应的函数，此时当订阅者Watcher接收到相应属性的变化，就会执行对应的更新函数，从而更新视图。因此接下去我们执行以下3个步骤，实现数据的双向绑定：\n1.实现一个监听器Observer，用来劫持并监听所有属性，如果有变动的，就通知订阅者。\n2.实现一个订阅者Watcher，每一个Watcher都绑定一个更新函数，watcher可以收到属性的变化通知并执行相应的函数，从而更新视图。\n3.实现一个解析器Compile，可以扫描和解析每个节点的相关指令（v-model，v-on等指令），如果节点存在v-model，v-on等指令，则解析器Compile初始化这类节点的模板数据，使之可以显示在视图上，然后初始化相应的订阅者（Watcher）。", 
+    "time" : ISODate("2019-07-10T09:32:49.088+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b0df947ffc2d0015626d"), 
+    "userName" : "18064129702", 
+    "title" : " vue 属性 methods computed watch 这三个属性的区别", 
+    "type" : "Vue", 
+    "text" : "methods（方法）：\n只要进行调用就会执行，不管依赖的值有没有改变。无缓存。\n\ncomputed（计算属性)：\n监听其所有依赖的变化，如果有变化会执行，没有变化不执行。有缓存，不用每次重新算。不支持异步。\n详解=》在vue的 模板内（{{}}）是可以写一些简单的js表达式的 ，很便利。但是如果在页面中使用大量或是复杂的表达式去处理数据，对页面的维护会有很大的影响。这个时候就需要用到computed 计算属性来处理复杂的逻辑运算。\n1.优点： \n在数据未发生变化时，优先读取缓存。computed 计算属性只有在相关的数据发生变化时才会改变要计算的属性，当相关数据没有变化是，它会读取缓存。而不必想 motheds方法 和 watch 方法是否每次都去执行函数。\n2.setter 和 getter方法：（注意在vue中书写时用set 和 get） \nsetter 方法在设置值是触发。 \ngetter 方法在获取值时触发。\n\nwatch（侦听属性）:\n观察某一个变量，发生变化会执行。支持异步。Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。\n一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。\n小结：\n1.主动调用的方法写在methods里，依据某些变量的更新进行某种操作用computed或者watch。 \n2.computed和watch：如果要异步，只能用watch。如果是计算某个值推荐用computed，比如购物车全选单选功能，购物车计算总价小计功能。", 
+    "time" : ISODate("2019-07-10T09:33:19.271+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b0ff947ffc2d0015626e"), 
+    "userName" : "18064129702", 
+    "title" : "react 和 react-native 的 区别", 
+    "type" : "React", 
+    "text" : "React 是基础框架，是一套基础设计实现理念，开发者不能直接使用它来开发移动应用或者网页。\n在React框架之上，发展出来的React Native可以用来开发移动应用，原生应用。\n\nReact Native产出的并不是“网页应用”， 或者说“HTML5应用”，又或者“混合应用”。 最终产品是一个真正的移动应用，从使用感受上和用Objective-C或Java编写的应用相比几乎是无法区分的。 React Native所使用的基础UI组件和原生应用完全一致。 你要做的就是把这些基础组件使用JavaScript和React的方式组合起来。", 
+    "time" : ISODate("2019-07-10T09:33:51.680+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b116947ffc2d0015626f"), 
+    "userName" : "18064129702", 
+    "title" : "react 虚拟DOM 的理解", 
+    "type" : "React", 
+    "text" : "真实dom:用我们传统的开发模式，原生JS或JQ操作DOM时，浏览器会从构建DOM树开始从头到尾执行一遍流程。在一次操作中，我需要更新10个DOM节点，浏览器收到第一个DOM请求后并不知道还有9次更新操作，因此会马上执行流程，最终执行10次。\n\n虚拟DOM就是为了解决浏览器性能问题而被设计出来的。\n如前，若一次操作中有10次更新DOM的动作，虚拟DOM不会立即操作DOM，而是将这10次更新的diff内容保存到本地一个JS对象中====>放在内存当中，最终将这个JS对象一次性attch到DOM树上，再进行后续操作，避免大量无谓的计算量。\n所以，用JS对象模拟DOM节点的好处是，页面的更新可以先全部反映在JS对象(虚拟DOM)上，操作内存中的JS对象的速度显然要更快，等更新完成后，再将最终的JS对象映射成真实的DOM，交由浏览器去绘制。\n\nDiff算法：如果我们在JSX里为数组或枚举型元素增加上key后，它能够根据key，直接找到具体位置进行操作，效率比较高。常见的最小编辑距离问题。Diff算法只是为了虚拟DOM比较替换效率更高，通过Diff算法得到diff算法结果数据表\n\n在React中，也有一个render函数来将虚拟DOM树，并且，React中有state转移的过程，所以每次state有变化之后，就会触发render函数，重新构造一个虚拟DOM树。对比新旧虚拟DOM树的差别，记录下差异，然后只针对差异部分对应的真实DOM进行操作。", 
+    "time" : ISODate("2019-07-10T09:34:14.651+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5d25b134947ffc2d00156270"), 
+    "userName" : "18064129702", 
+    "title" : " react Diff 算法的 深入理解", 
+    "type" : "React", 
+    "text" : "1，把树形结构按照层级分解，只比较同级元素，同层比对，层层比对，发现节点不同则将该节点下面的虚拟DOM全部替换\n2，给列表解构的每个单元添加唯一的key属性，方便比较。===》循环key最好不要用index下标，尽量稳定，提高diff性能\n3，react只会匹配相同class的component（这里面的class指的是组件的名字）\n4，合并操作，调用component的setState方法的时候，React讲其标记为dirty.到每一个事件循环结束，\nReact检查所有标记dirty的component重新绘制\n5， 选择性子树渲染。开发人员可以重写shouldComponentUpdate提高diff的性能\n6.setState异步提高效率，可以多次setState 一起执行", 
+    "time" : ISODate("2019-07-10T09:34:44.790+0000"), 
+    "__v" : NumberInt(0)
+}
